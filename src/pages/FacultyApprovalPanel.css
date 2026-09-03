@@ -1,0 +1,219 @@
+.faculty-panel-container {
+  padding: 40px 32px 80px;
+}
+
+.faculty-header-banner {
+  background-color: var(--dark-surface);
+  border-radius: var(--radius-container);
+  padding: 36px 40px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.faculty-banner-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+.faculty-banner-desc {
+  color: #A3B899;
+  font-size: 14px;
+}
+
+.faculty-pending-count-box {
+  background-color: var(--accent-green);
+  color: #FFFFFF;
+  padding: 16px 24px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.faculty-pending-count-num {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.faculty-pending-count-label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.faculty-table-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: var(--radius-container);
+  padding: 32px;
+  overflow-x: auto;
+}
+
+.faculty-submissions-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.faculty-table-head-row {
+  border-bottom: 2px solid #F3F4F6;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.faculty-th {
+  padding: 12px 16px;
+}
+
+.faculty-table-body-row {
+  border-bottom: 1px solid #F3F4F6;
+  font-size: 14px;
+}
+
+.faculty-td {
+  padding: 16px;
+}
+
+.faculty-student-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.faculty-student-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.faculty-student-name {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.faculty-student-major {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.faculty-project-title-link {
+  font-weight: 700;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.faculty-project-title-link:hover {
+  color: var(--accent-green);
+}
+
+.faculty-actions-cell {
+  display: flex;
+  gap: 8px;
+}
+
+/* HIGH Z-INDEX MODAL BACKDROPS (Always on top of Review Modal) */
+.doc-viewer-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(10, 20, 10, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2500;
+  backdrop-filter: blur(6px);
+  padding: 20px;
+}
+
+.doc-viewer-modal-card {
+  width: 860px;
+  max-width: 96vw;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 28px 32px;
+  max-height: 92vh;
+  overflow-y: auto;
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.35);
+  border: 1px solid #E5E7EB;
+  position: relative;
+}
+
+.doc-viewer-iframe {
+  width: 100%;
+  height: 520px;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  background-color: #F9FAFB;
+}
+
+/* Slide Deck Styling */
+.doc-viewer-slide-card {
+  background-color: #12210F;
+  color: #FFFFFF;
+  border-radius: 18px;
+  padding: 36px 40px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(95, 178, 69, 0.3);
+}
+
+.doc-viewer-slide-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent-green);
+  margin-bottom: 16px;
+}
+
+.doc-viewer-slide-body {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #E5E7EB;
+}
+
+.doc-slide-thumb-strip {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.doc-slide-thumb {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #F3F4F6;
+  color: #4B5563;
+  border: 1px solid #E5E7EB;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.doc-slide-thumb.active {
+  background-color: #12210F;
+  color: var(--accent-green);
+  border-color: var(--accent-green);
+}
+
+@media (max-width: 768px) {
+  .faculty-header-banner {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+}

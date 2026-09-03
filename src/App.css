@@ -1,0 +1,27 @@
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-mode-banner {
+  color: #FFFFFF;
+  text-align: center;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition: background-color 0.2s ease;
+}
+
+.app-mode-banner.student-mode {
+  background-color: var(--accent-green);
+}
+
+.app-mode-banner.faculty-mode {
+  background-color: var(--dark-surface);
+}
+
+.app-main-content {
+  flex: 1;
+}
