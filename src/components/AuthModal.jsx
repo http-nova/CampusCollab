@@ -7,6 +7,13 @@ const parseAuthError = (err) => {
   const code = err?.code || '';
   const message = err?.message || '';
 
+  if (code === 'auth/unauthorized-domain' || message.includes('unauthorized-domain')) {
+    const currentHost = typeof window !== 'undefined' ? window.location.hostname : 'your-domain.netlify.app';
+    return `Domain not authorized. Please add "${currentHost}" in Firebase Console -> Authentication -> Settings -> Authorized Domains.`;
+  }
+  if (code === 'auth/internal-error' || message.includes('internal-error')) {
+    return 'Firebase authentication error. Please verify Google Sign-In is enabled and your Netlify domain is added under Authorized Domains in Firebase Console.';
+  }
   if (code === 'auth/user-not-found' || message.includes('user-not-found')) {
     return 'Email does not exist. Please check your email address or click Sign Up.';
   }
@@ -23,7 +30,7 @@ const parseAuthError = (err) => {
     return 'Please enter a valid email address.';
   }
   if (code === 'auth/popup-closed-by-user' || message.includes('popup-closed-by-user')) {
-    return 'Google Sign-In popup was closed.';
+    return 'Google Sign-In popup was closed before completing login.';
   }
   if (code === 'auth/popup-blocked' || message.includes('popup-blocked')) {
     return 'Google Sign-In popup was blocked by browser. Please allow popups for this site.';
